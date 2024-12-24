@@ -3,7 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Adds a button to copy text to clipboard inside an <li> with specific classes before the first element in toolbar-items
-// @author       Your Name
+// @author       Nomind
+// @homepageURL  https://github.com/XIU2/UserScript
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -16,12 +17,12 @@
         // 使用正则表达式提取项目名称和任务 ID
         const regex = /projects\/([^\/]+)\/work_packages\/(\d+)/;
         const match = url.match(regex);
-    
+
         if (match) {
             const projectName = match[1].toUpperCase(); // 提取项目名称
             const taskId = match[2]; // 提取任务 ID
             const detail = document.getElementsByClassName("inline-edit--display-field subject -required -editable")[0].title;
-    
+
             return `git commit -m "${projectName}-${taskId}: ${detail}"`
         } else {
             console.log('未能匹配到项目名称和任务 ID');
