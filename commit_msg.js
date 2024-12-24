@@ -4,9 +4,9 @@
 // @version      1.1
 // @description  Adds a button to copy text to clipboard inside an <li> with specific classes before the first element in toolbar-items
 // @author       Nomind
-// @homepageURL  https://github.com/XIU2/UserScript
 // @match        *://*/*
 // @grant        none
+// @license      GPL License
 // ==/UserScript==
 
 (function() {
